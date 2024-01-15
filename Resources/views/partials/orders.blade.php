@@ -17,7 +17,11 @@
 					</div>
 					@if( $results )
 						<ul class="sidebar-block-list wordpress-orders-list">
+						@if( $results->edit_url )
 							<li><i class="glyphicon glyphicon-user"></i><a href="{{$results->edit_url}}" target="_blank">{{$results->first_name}} {{$results->last_name}}</a></li>
+						@else
+							<li><i class="glyphicon glyphicon-user"></i>{{$results->first_name}} {{$results->last_name}}</li>
+						@endif
 							<li><label>Registered</label>{{ $results->registered }}</li>
 							<li><label>Actve CRM</label>{{ $results->active_crm }}</li>
 							<li><label>Last License Check</label>{{ $results->last_license_check }}</li>
